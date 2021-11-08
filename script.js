@@ -2,10 +2,6 @@ const gridContainer = document.querySelector('.gridContainer');
 
 const maxGridPixels = 960;
 
-// change colour on hover event
-const squares = document.querySelectorAll('.gridSquare');
-squares.forEach(key => key.addEventListener('mouseover', addColour));
-//squares.forEach(key => key.addEventListener('mouseout', removeColour));
 
 window.onload = function() {
     createGrid(16);
@@ -47,4 +43,15 @@ function createGrid(squaresPerSide) {
             gridRowDiv.appendChild(gridSquareDiv);
         }
     }
+
+    // add mouseover event
+    let squares = document.querySelectorAll('.gridSquare');
+    squares.forEach(key => key.addEventListener('mouseover', addColour));
 }
+
+
+/*
+TODO
+    limit maximum squares (100)
+    remove bottom border of squares
+*/
