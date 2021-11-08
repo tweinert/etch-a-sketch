@@ -1,15 +1,15 @@
 .buttonContainer {
     padding-bottom: 50px;
 }
-
+/*
 .gridContainer {
     
 }
 
 .gridRow {
-    height: 50px;
+    
 }
-
+*/
 .gridSquare {
     display: inline-block;
     border: 1px solid black;

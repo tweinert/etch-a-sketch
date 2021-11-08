@@ -31,18 +31,19 @@ function createGrid(squaresPerSide) {
     // clear grid
     gridContainer.innerHTML = '';
 
-    // square size string
-    
+    // calculate square size
+    let squareSize = maxGridPixels / squaresPerSide;
 
     for (let i = 0; i < squaresPerSide; i++) {
         let gridRowDiv = document.createElement('div');
         gridRowDiv.classList.add('gridRow');
+        gridRowDiv.style.height = squareSize + "px";
         gridContainer.appendChild(gridRowDiv);
         for (let j = 0; j < squaresPerSide; j++) {
             let gridSquareDiv = document.createElement('div');
             gridSquareDiv.classList.add('gridSquare');
-            gridSquareDiv.style.height = "48px";
-            gridSquareDiv.style.width = "48px";
+            gridSquareDiv.style.height = squareSize + "px";
+            gridSquareDiv.style.width = squareSize + "px";
             gridRowDiv.appendChild(gridSquareDiv);
         }
     }
