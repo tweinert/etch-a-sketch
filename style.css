@@ -1,3 +1,7 @@
+.buttonContainer {
+    padding-bottom: 50px;
+}
+
 .gridContainer {
     
 }
@@ -9,9 +13,6 @@
 .gridSquare {
     display: inline-block;
     border: 1px solid black;
-    height: 48px;
-    width: 48px;
-    
 }
 
 .grey {
