@@ -2,7 +2,7 @@
     
 }
 
-.gridRowDiv {
+.gridRow {
     height: 50px;
 }
 
@@ -11,4 +11,9 @@
     border: 1px solid black;
     height: 48px;
     width: 48px;
+    
+}
+
+.grey {
+    background-color: grey;
 }
