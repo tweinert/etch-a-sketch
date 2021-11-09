@@ -57,3 +57,18 @@ function createGrid(squaresPerSide) {
     let squares = document.querySelectorAll('.gridSquare');
     squares.forEach(key => key.addEventListener('mouseover', addColour));
 }
+
+function getRandomColour() {
+    let r = Math.floor(Math.random() * 256);
+    let g = Math.floor(Math.random() * 256);
+    let b = Math.floor(Math.random() * 256);
+
+    let randomRGB = ("rgb(" + r + "," + g + "," + b + ")");
+    return randomRGB;
+}
+
+
+/*
+TODO
+    use getRandomColour() to select colour on mouseover
+*/
