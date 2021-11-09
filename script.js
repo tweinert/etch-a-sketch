@@ -2,9 +2,11 @@ const gridContainer = document.querySelector('.gridContainer');
 
 const maxGridPixels = 960;
 
+let squaresPerSide = 16;
+
 
 window.onload = function() {
-    createGrid(16);
+    createGrid(squaresPerSide);
 };
 
 // adds colour to square, used when hover
@@ -18,7 +20,10 @@ function removeColour(e) {
 
 // ask user for grid size
 function promptSize() {
-    let squaresPerSide = prompt("How many squares per side?");
+    squaresPerSide = 0;
+    while(isNaN(squaresPerSide) || squaresPerSide > 100 || squaresPerSide < 2) {
+        squaresPerSide = prompt("How many squares per side?");
+    }
     createGrid(squaresPerSide);
 }
 
@@ -35,12 +40,16 @@ function createGrid(squaresPerSide) {
         gridRowDiv.classList.add('gridRow');
         gridRowDiv.style.height = squareSize + "px";
         gridContainer.appendChild(gridRowDiv);
+
         for (let j = 0; j < squaresPerSide; j++) {
             let gridSquareDiv = document.createElement('div');
             gridSquareDiv.classList.add('gridSquare');
             gridSquareDiv.style.height = squareSize + "px";
             gridSquareDiv.style.width = squareSize + "px";
             gridRowDiv.appendChild(gridSquareDiv);
+            if (i === squaresPerSide - 1) {
+                gridSquareDiv.style.borderBottom = "1px solid black";
+            }
         }
     }
 
@@ -48,10 +57,3 @@ function createGrid(squaresPerSide) {
     let squares = document.querySelectorAll('.gridSquare');
     squares.forEach(key => key.addEventListener('mouseover', addColour));
 }
-
-
-/*
-TODO
-    limit maximum squares (100)
-    remove bottom border of squares
-*/
